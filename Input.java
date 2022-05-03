@@ -1,11 +1,12 @@
 import java.util.Scanner;
-public class Input {
+public class Input{
     public static String InputName() {
-    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    Scanner inputname = new Scanner(System.in); 
     System.out.println("Enter username");
 
-    final String Name = myObj.nextLine();  // Read user input
-    
-    return Name;
+    String Name = inputname.nextLine();  
+    inputname.close();
+
+    return Name.toString();
     }
 }

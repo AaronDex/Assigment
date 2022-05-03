@@ -8,7 +8,7 @@ public class RanGen {
         int max = 199999;
         
         int rand_int = (int)Math.floor(Math.random()*(max-min+1)+min);
-        System.out.print(Input.InputName()+"'s "+"Ticket ID Is: " + rand_int + " Is Genuine Part");
+        
         return rand_int;
         
         
@@ -17,7 +17,7 @@ public class RanGen {
         int max = 299999;
 
         int rand_int = (int)Math.floor(Math.random()*(max-min+1)+min);
-        System.out.print(Input.InputName()+"'s "+"Ticket ID Is: " + rand_int +" Not Genuine Part"  );
+        
         
         return rand_int;}
       
