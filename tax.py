@@ -27,7 +27,7 @@ def tax():
             raise
         else:
             break
-1
+
 ###Define Widgets
 myLabel1 = Label(root,text="Please enter your gross income for this finnical year: ")
 myLabel2 = Label(root,text="How Many Cases Assigned?",)
@@ -41,5 +41,5 @@ myLabel1.grid(row=1,column=2)
 ###Placing Entry
 myEntry1.grid(row=2,column=2)
 myButton1.grid(row=2,column=4)
-
+asdasdasdasd
 mainloop()
