@@ -1,4 +1,3 @@
-Aa Aa
-AA1
-SusSus1
-Sus Sus1 36
+A A 0
+A A 0
+Sus Sus1 0

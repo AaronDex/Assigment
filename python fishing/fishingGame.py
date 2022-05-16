@@ -1,4 +1,4 @@
-from lib2to3.pgen2.token import NEWLINE
+
 from random import randint
 class fishableItem:
     def __init__(self,name,keeper,fish,pointsKept,pointsReleased):
@@ -21,27 +21,29 @@ class fishTable:
     seaweed=fishableItem("Seaweed",True,False,5,-5)
 def userInfoGet():
     accountStatus=input("Do You Have a Account? Y/N ")
-    if accountStatus=="N":
-        userDetails=user(input("Please Enter a Username "),input(("Please Enter a Password ")),0)
-        file = open("demofile.txt","a")
-        file.write(userDetails.userName+" "+userDetails.password+" "+0+"\n")
-        file.close
-    else:
-        while True:
-            userDetails=user(input("Please Enter Your Username "),input(("Please Enter Your Password ")),0)
-            try:
-                for line in open("demofile.txt","r").readlines():
-                    loginDetails=line.split()
-                    if userDetails.userName==loginDetails[0] and userDetails.password==loginDetails[1]:
-                        print("welcome back")
-                        update=user(loginDetails[0],loginDetails[1],loginDetails[2])
-                        return False
-            except:
-                print("Wrong Username Or Password")
-
+    try:
+        file = open("demofile.txt","x")
+    except:
+        if accountStatus=="N":
+            userDetails=user(input("Please Enter a Username "),input(("Please Enter a Password ")),0)
+            file = open("demofile.txt","a")
+            file.write(userDetails.userName+" "+userDetails.password+" "+"0"+"\n")
+            file.close()
+        else:
+            while True:
+                userDetails=user(input("Please Enter Your Username "),input(("Please Enter Your Password ")),0)
+                with open("demofile.txt", "r") as file:
+                        lines=file.readlines()
+                        
+                        if userDetails.userName==lines[0] and userDetails.password==lines[1]:
+                            return False
+                            update=user(loginDetails[0],loginDetails[1],loginDetails[2])
+                            #update=user(loginDetails[0],loginDetails[1],loginDetails[2])
+                            #print("Welcome Back: "+userDetails.userName+" Your Score Is "+user.score)
+                            return False
+                
 def goFishing():
     cast=randint(1,6)
-    
     match cast:
         case 1:
             print(fishTable.kingGW.name)
